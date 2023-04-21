@@ -30,7 +30,8 @@ exports.createNewPost = asyncHandler(async (req, res) => {
 
 exports.updatePost = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  await Post.findByIdAndUpdate({ _id: id });
+  const { title, content } = req.body;
+  await Post.findByIdAndUpdate({ _id: id }, { title, content }, { new: true });
 
   res.status(204).send('A Post Updated');
 });

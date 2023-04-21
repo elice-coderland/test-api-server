@@ -4,7 +4,7 @@ const cors = require('cors');
 const postsRouter  = require('./routes/postsRouter');
 const app = express();
 
-mongoose.connect(`mongodb+srv://thisisjustpeter:XB9VKzco7BIFe9n8@elice.arckh9d.mongodb.net/blog-api-server`)
+mongoose.connect(``)
   .then((res) => console.log('DB connected'));
 app.use(cors());
 app.use(express.json());
